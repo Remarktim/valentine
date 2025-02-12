@@ -56,23 +56,29 @@
         </div>
       </div>
       <div class="md:h-full md:w-1/2 h-auto w-auto mx-auto flex flex-col justify-center items-center">
-        <div class="gap-2 h-150 w-120 md:w-140 bg-[url(/img/hearts.png)] bg-cover bg-center flex flex-col justify-center items-center">
-          <div class="text-white text-center font-bold text-xl uppercase">Can you be my Valentine Date?</div>
-          <div class="text-white text-center text-2xl">
-            <button
-              type="button"
-              id="yesButton"
-              onclick="handleYesClick()"
-              class="button-animation p-1.5 cursor-pointer px-5 border rounded-3xl hover:bg-white hover:text-red-500 transition-colors duration-300">
-              YES
-            </button>
-            <button
-              id="noButton"
-              type="button"
-              onclick="handleNoClick()"
-              class="button-animation cursor-pointer p-1.5 px-5 border rounded-3xl">
-              NO
-            </button>
+        <div class="relative flex flex-col items-center">
+          <img
+            class="bg-cover bg-center w-full"
+            src="img/hearts.png"
+            alt="" />
+          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center gap-4">
+            <div class="text-white text-center font-bold text-xl uppercase">Can you be my Valentine Date?</div>
+            <div class="text-white text-center text-2xl flex gap-4">
+              <button
+                type="button"
+                id="yesButton"
+                onclick="handleYesClick()"
+                class="button-animation p-1.5 cursor-pointer px-5 border rounded-3xl hover:bg-white hover:text-red-500 transition-colors duration-300">
+                YES
+              </button>
+              <button
+                id="noButton"
+                type="button"
+                onclick="handleNoClick()"
+                class="button-animation cursor-pointer p-1.5 px-5 border rounded-3xl">
+                NO
+              </button>
+            </div>
           </div>
         </div>
       </div>
