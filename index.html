@@ -60,7 +60,7 @@
           </div>
         </div>
       </div>
-      <div class="bg-white md:h-full md:w-1/2 rounded-l-full pl-45 relative">
+      <div class="bg-white rounded-b-full md:rounded-b-none md:rounded-l-full md:h-full md:w-1/2 pl-45 relative">
         <img
           class="h-50 w-auto float-end rotate-30 m-10"
           src="img/heart.gif"
@@ -105,6 +105,25 @@
       let noButtonScale = 1;
       let noClickCount = 0;
 
+      function resetAll() {
+        currentGifIndex = 0;
+        noButtonScale = 1;
+        noClickCount = 0;
+
+        const noButton = document.getElementById("noButton");
+        const yesButton = document.getElementById("yesButton");
+
+        noButton.style.transform = "scale(1)";
+        noButton.style.opacity = "1";
+        noButton.style.display = "inline";
+
+        yesButton.classList.remove("yes-button-grow");
+        yesButton.style.transform = "scale(1)";
+
+        const valentineGif = document.getElementById("valentineGif");
+        valentineGif.src = "img/1.gif";
+      }
+
       function handleNoClick() {
         const noButton = document.getElementById("noButton");
         const yesButton = document.getElementById("yesButton");
@@ -135,12 +154,16 @@
 
         setTimeout(() => {
           modal.classList.add("show");
-        }, 500);
+        }, 100);
       }
 
       function closeModal() {
         const modal = document.getElementById("thankYouModal");
         modal.classList.remove("show");
+
+        setTimeout(() => {
+          resetAll();
+        }, 100);
       }
 
       document.getElementById("thankYouModal").addEventListener("click", function (event) {
